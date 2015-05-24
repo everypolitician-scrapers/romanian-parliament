@@ -39,7 +39,7 @@ end
   term_url = @BASE + @COD % year
   noko = noko_for(term_url)
 
-  (term_start, term_end) = noko.css('.stiri-box h3').last.text.match(/(\d{4})\s*-\s*(\d{4})/).captures
+  (term_start, term_end) = noko.css('.stiri-box h3').last.text.match(/(\d{4})\s*-\s*(\d{4})?/).captures
   term = { 
     id: year,
     name: year,
