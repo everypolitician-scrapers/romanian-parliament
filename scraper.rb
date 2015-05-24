@@ -51,8 +51,33 @@ end
   noko.css('div.grup-parlamentar-list table a[href*="idm="]/@href').map(&:text).each do |mp_link|
     mp_url = URI.join(term_url, mp_link)
     box = noko_for(mp_url).css('div.stiri-box')
+
     dep = box.xpath('.//h3[contains(.,"DEPUTY")]/..')
     national = dep.text.include? 'la nivel national'
+
+    # TODO replicate this logic for Parliamentary Groups and then create
+    # Memberships for each combo
+    box.xpath('.//h3[contains(.,"Political party")]/../table/tr//table').each do |party_row|
+      idp = party_row.css('a[href*="idp="]') 
+      next if idp.empty?
+      party = { 
+        id:  idp.first.text,
+        identifier: idp.first.attr('href')[/idp=(\d+)/, 1],
+      }
+      party[:name] = (party[:id] == 'independent') ? "Independent" : party_row.css('td')[2].text.strip
+      ScraperWiki.save_sqlite([:id], party, 'parties')
+
+      dates_row = (party[:id] == 'independent') ? 2 : 3
+      if dates = party_row.css('td')[dates_row]
+        if p_start = dates.text[/since\s+(\w+\.\s+\d+)/, 1]
+          party[:start_date] = datefrom(p_start)
+        end
+        if p_end = dates.text[/until\s+(\w+\.\s+\d+)/, 1]
+          party[:end_date] = datefrom(p_end)
+        end
+      end
+      puts "#{party}".magenta
+    end
 
     # TODO: find a unique ID, or check the "Alte legislaturi" box for
     # previously seen
@@ -66,8 +91,7 @@ end
       area: national ? 'National' : dep.css('a[href*="cir="]').first.text,
       faction: box.css('a[href*="idg="]').first.text,
       faction_id: box.css('a[href*="idg="]/@href').first.text[/idg=(\d+)/, 1],
-      party: box.css('a[href*="idp="]').first.text,
-      party_id: box.css('a[href*="idp="]/@href').first.text[/idp=(\d+)/, 1],
+      # party: party,
       start_date: datefrom(dep.text[/start of the mandate: (\d+\s+\w+\s+\d+)/, 1]).to_s,
       end_date: datefrom(dep.text[/end of the mandate: (\d+\s+\w+\s+\d+)/, 1]).to_s,
       source: mp_url.to_s,
