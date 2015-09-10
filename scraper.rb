@@ -20,38 +20,39 @@ end
 
 def date_parse(str)
   return if str.to_s.empty?
-  return Date.parse(str).to_s rescue binding.pry
+  return Date.parse(str).to_s rescue ''
 end
 
 def scrape_list(url)
   noko = noko_for(url)
 
-  current = noko.css('.grup-parlamentar-list table').first
-  current.xpath('.//tr[td]').each do |tr|
-    tds = tr.css('td')
+  noko.css('.grup-parlamentar-list table').each_with_index do |table, i|
+    table.xpath('.//tr[td]').each do |tr|
+      tds = tr.css('td')
 
-    if tds.count == 5 # combined
-      area, area_id = nil, nil
-      date_col = 4
-    else
-      area, area_id = tds[2].text.split(/\s*\/\s*/, 2)
-      date_col = 5
+      if tds.count == 5 # combined
+        area, area_id = nil, nil
+        date_col = 4
+      else
+        area, area_id = tds[2].text.split(/\s*\/\s*/, 2)
+        date_col = 5
+      end
+      link = URI.join url, tds[1].css('a/@href').text
+      date_field = i == 0 ? 'start_date' : 'end_date'
+
+      data = { 
+        id: link.to_s[/idm=(\d+)/, 1],
+        name: tds[1].text.tidy,
+        faction: tds[4].text.tidy,
+        area: area,
+        area_id: area_id,
+        term: 2012,
+        source: link.to_s,
+      }.merge(scrape_person(link))
+      data[date_field] = date_parse(tds[date_col].text)
+      puts data
+      # ScraperWiki.save_sqlite([:id, :term], data)
     end
-    link = URI.join url, tds[1].css('a/@href').text
-
-    data = { 
-      id: link.to_s[/idm=(\d+)/, 1],
-      name: tds[1].text.tidy,
-      faction: tds[4].text.tidy,
-      area: area,
-      area_id: area_id,
-      term: 2012,
-      start_date: date_parse(tds[date_col].text),
-      start_date_raw: date_from(tds[date_col].text),
-      source: link.to_s,
-    }.merge(scrape_person(link))
-    puts data
-    # ScraperWiki.save_sqlite([:id, :term], data)
   end
 end
 
