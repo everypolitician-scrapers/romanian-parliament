@@ -28,17 +28,12 @@ def scrape_list(url)
 
   noko.css('.grup-parlamentar-list table').each_with_index do |table, i|
     table.xpath('.//tr[td]').each do |tr|
-      tds = tr.css('td')
+      tds = tr.css('td').to_a
+      tds.insert(3, nil) if tds.count == 5 # combined constituency
 
-      if tds.count == 5 # combined
-        area, area_id = nil, nil
-        date_col = 4
-      else
-        area, area_id = tds[2].text.split(/\s*\/\s*/, 2)
-        date_col = 5
-      end
       link = URI.join url, tds[1].css('a/@href').text
       date_field = i == 0 ? 'start_date' : 'end_date'
+      area, area_id = tds[2].text.split(/\s*\/\s*/, 2)
 
       data = { 
         id: link.to_s[/idm=(\d+)/, 1],
@@ -49,7 +44,8 @@ def scrape_list(url)
         term: 2012,
         source: link.to_s,
       }.merge(scrape_person(link))
-      data[date_field] = date_parse(tds[date_col].text)
+      data[date_field] = date_parse(tds[5].text)
+      puts data
       ScraperWiki.save_sqlite([:id, :term], data)
     end
   end
