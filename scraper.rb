@@ -50,8 +50,7 @@ def scrape_list(url)
         source: link.to_s,
       }.merge(scrape_person(link))
       data[date_field] = date_parse(tds[date_col].text)
-      puts data
-      # ScraperWiki.save_sqlite([:id, :term], data)
+      ScraperWiki.save_sqlite([:id, :term], data)
     end
   end
 end
