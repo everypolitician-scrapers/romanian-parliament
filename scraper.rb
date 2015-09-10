@@ -33,7 +33,7 @@ def scrape_list(url)
 
       link = URI.join url, tds[1].css('a/@href').text
       date_field = i == 0 ? 'start_date' : 'end_date'
-      area, area_id = tds[2].text.split(/\s*\/\s*/, 2)
+      area, area_id = tds[2].text.split(/\s*\/\s*/, 2).map(&:tidy)
 
       data = { 
         id: link.to_s[/idm=(\d+)/, 1],
@@ -45,7 +45,7 @@ def scrape_list(url)
         source: link.to_s,
       }.merge(scrape_person(link))
       data[date_field] = date_parse(tds[5].text)
-      puts data
+      puts data[:name]
       ScraperWiki.save_sqlite([:id, :term], data)
     end
   end
