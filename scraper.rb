@@ -45,7 +45,7 @@ def scrape_list(url)
         source: link.to_s,
       }.merge(scrape_person(link))
       data[date_field] = date_parse(tds[5].text)
-      puts data[:name]
+      # puts data[:name]
       ScraperWiki.save_sqlite([:id, :term], data)
     end
   end
@@ -55,7 +55,7 @@ def scrape_person(url)
   noko = noko_for(url)
   box = noko.css('.stiri-detalii')
   data = { 
-    sort_name: box.css('h1').text.tidy,
+    sort_name: box.xpath('.//h1/text()').first.text.tidy,
     image: box.css('.profile-pic-dep img/@src').text,
     birth_date: date_parse(box.css('.profile-pic-dep').text.tidy),
     email: box.css('span.mailInfo').text,
