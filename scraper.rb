@@ -58,7 +58,7 @@ def scrape_person(url)
     sort_name: box.xpath('.//h1/text()').first.text.tidy,
     image: box.css('.profile-pic-dep img/@src').text,
     birth_date: date_parse(box.css('.profile-pic-dep').text.tidy),
-    email: box.css('span.mailInfo').text,
+    email: box.css('span.mailInfo').map(&:text).join(";"),
     #TODO history of parliamentary groups
   }
   data[:image] = URI.join(url, URI.escape(data[:image])).to_s unless data[:image].to_s.empty?
