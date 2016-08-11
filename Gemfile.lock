@@ -10,8 +10,11 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
     coderay (1.1.0)
     colorize (0.7.7)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     excon (0.45.4)
     execjs (2.5.2)
     faraday (0.9.1)
@@ -19,6 +22,8 @@ GEM
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
     fuzzy_match (2.1.0)
+    git (1.3.0)
+    hashdiff (0.3.0)
     hashie (3.4.2)
     httpclient (2.6.0.1)
     method_source (0.8.2)
@@ -31,10 +36,22 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    safe_yaml (1.0.4)
+    scraped_page_archive (0.3.1)
+      git (~> 1.3.0)
+      vcr-archive (~> 0.3.0)
     slop (3.6.0)
     sqlite3 (1.3.10)
     sqlite_magic (0.0.3)
       sqlite3
+    vcr (3.0.3)
+    vcr-archive (0.3.0)
+      vcr (~> 3.0.2)
+      webmock (~> 2.0.3)
+    webmock (2.0.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     wikidata-client (0.0.7)
       excon (~> 0.40)
       faraday (~> 0.9)
@@ -51,5 +68,12 @@ DEPENDENCIES
   nokogiri
   open-uri-cached
   pry
+  scraped_page_archive
   scraperwiki!
   wikidata-client (~> 0.0.7)
+
+RUBY VERSION
+   ruby 2.0.0p481
+
+BUNDLED WITH
+   1.12.5
