@@ -34,13 +34,13 @@ def scrape_list(url)
       link = URI.join url, tds[1].css('a/@href').text
       area_id, area = tds[2].text.split(/\s*\/\s*/, 2).map(&:tidy)
       data = {
-        id: link.to_s[/idm=(\d+)/, 1],
-        name: tds[1].text.tidy,
+        id:      link.to_s[/idm=(\d+)/, 1],
+        name:    tds[1].text.tidy,
         faction: tds[4].text.tidy,
-        area: area,
+        area:    area,
         area_id: area_id,
-        term: 2012,
-        source: link.to_s,
+        term:    2012,
+        source:  link.to_s,
       }.merge(scrape_person(link))
       data[:start_date] = date_parse(tds[5].text)
       data[:end_date]   = date_parse(tds[6].text) if tds.count == 7
@@ -54,10 +54,10 @@ def scrape_person(url)
   noko = noko_for(url)
   box = noko.css('.stiri-detalii')
   data = {
-    sort_name: box.xpath('.//h1/text()').first.text.tidy,
-    image: box.css('.profile-pic-dep img/@src').text,
+    sort_name:  box.xpath('.//h1/text()').first.text.tidy,
+    image:      box.css('.profile-pic-dep img/@src').text,
     birth_date: date_parse(box.css('.profile-pic-dep').text.tidy),
-    email: box.css('span.mailInfo').map(&:text).join(";"),
+    email:      box.css('span.mailInfo').map(&:text).join(";"),
     #TODO history of parliamentary groups
   }
   data[:image] = URI.join(url, URI.escape(data[:image])).to_s unless data[:image].to_s.empty?
