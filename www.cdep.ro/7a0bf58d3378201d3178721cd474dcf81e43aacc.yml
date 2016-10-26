@@ -18,11 +18,11 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 25 Oct 2016 10:27:06 GMT
+    - Wed, 26 Oct 2016 07:19:59 GMT
     Server:
     - Oracle-Application-Server-11g
     Content-Length:
-    - '23441'
+    - '23550'
     Access-Control-Allow-Origin:
     - https://www.cdep.ro
     Content-Type:
@@ -32,4 +32,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 25 Oct 2016 10:27:07 GMT
+recorded_at: Wed, 26 Oct 2016 07:19:59 GMT
