@@ -66,4 +66,5 @@ def scrape_person(url)
   data
 end
 
+ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 scrape_list('http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2')
