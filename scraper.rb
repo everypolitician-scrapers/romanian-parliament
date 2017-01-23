@@ -32,7 +32,7 @@ class MemberRow < Scraped::HTML
     source[/idm=(\d+)/, 1]
   end
 
-  field :name do
+  field :sort_name do
     tds[1].text.tidy
   end
 
@@ -82,7 +82,7 @@ end
 class MemberPage < Scraped::HTML
   decorator Scraped::Response::Decorator::AbsoluteUrls
 
-  field :sort_name do
+  field :name do
     box.xpath('.//h1/text()').first.text.tidy rescue binding.pry
   end
 
