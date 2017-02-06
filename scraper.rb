@@ -48,10 +48,6 @@ class MemberRow < Scraped::HTML
     area_data.first
   end
 
-  field :term do
-    2012
-  end
-
   field :source do
     tds[1].css('a/@href').text
   end
@@ -105,17 +101,81 @@ class MemberPage < Scraped::HTML
   end
 end
 
-def scrape(h)
-  url, klass = h.to_a.first
-  klass.new(response: Scraped::Request.new(url: url).response)
+module EveryPolitician
+  class ScraperRun
+    def initialize(id: SecureRandom.uuid, table: 'data', index_fields: nil, default_index_fields: %i(id term start_date))
+      @run_data = { id: id, started: Time.now }
+      @table = table
+      @index_fields = index_fields
+      @default_index_fields = default_index_fields
+      ScraperWiki.save_sqlite(%i(id), run_data, 'runs')
+      ScraperWiki.sqliteexecute('DELETE FROM %s' % table) rescue nil
+    end
+
+    def index_fields_from(data)
+      index_fields || (data.keys & default_index_fields)
+    end
+
+    def save_all(data, debugging: ENV['MORPH_PRINT_DATA'])
+      data.each { |r| puts r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h } if debugging
+      ScraperWiki.save_sqlite(index_fields_from(data), data, table)
+      ScraperWiki.save_sqlite(%i(id), run_data.merge(ended: Time.now), 'runs')
+    end
+
+    def error(e)
+      # TODO: do something better with the error
+      warn e
+      ScraperWiki.save_sqlite(%i(id), run_data.merge(errored: Time.now), 'runs')
+    end
+
+    private
+
+    attr_reader :run_data, :table, :index_fields, :default_index_fields
+  end
+
+  class Scraper
+    def initialize
+      @scraper_run = EveryPolitician::ScraperRun.new
+    end
+
+    def run
+      scraper_run.save_all(data)
+    rescue => e
+      scraper_run.error(e)
+    end
+
+    private
+
+    def scrape(h)
+      url, klass = h.to_a.first
+      klass.new(response: Scraped::Request.new(url: url).response)
+    end
+
+    class IndexToMembers < Scraper
+      def initialize(url:, members_class:, member_class:, default_data: {})
+        @url = url
+        @members_class = members_class
+        @member_class = member_class
+        @default_data = default_data
+        super()
+      end
+
+      def data
+        scrape(url => members_class).members.map do |mem|
+          default_data.merge(mem.to_h).merge(scrape(mem.source => member_class).to_h)
+        end
+      end
+
+      private
+
+      attr_reader :scraper_run, :url, :members_class, :member_class, :default_data
+    end
+  end
 end
 
-start = 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
-data = scrape(start => MembersPage).members.map do |mem|
-  mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
-end
-
-# puts data.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
-
-ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-ScraperWiki.save_sqlite(%i(id term), data)
+EveryPolitician::Scraper::IndexToMembers.new(
+  url:           'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
+  members_class: MembersPage,
+  member_class:  MemberPage,
+  default_data:  { term: 2012 }
+).run
