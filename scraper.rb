@@ -103,7 +103,7 @@ end
 
 module EveryPolitician
   class ScraperRun
-    def initialize(id: SecureRandom.uuid, table: 'data', index_fields: nil, default_index_fields: %i(id term start_date))
+    def initialize(id: SecureRandom.uuid, table: 'data', index_fields: nil, default_index_fields: %i(id term))
       @run_data = { id: id, started: Time.now }
       @table = table
       @index_fields = index_fields
