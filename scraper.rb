@@ -112,10 +112,6 @@ module EveryPolitician
       ScraperWiki.sqliteexecute('DELETE FROM %s' % table) rescue nil
     end
 
-    def index_fields_from(data)
-      index_fields || (data.first.keys & default_index_fields)
-    end
-
     def save_all(data, debugging: ENV['MORPH_PRINT_DATA'])
       data.each { |r| puts r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h } if debugging
       ScraperWiki.save_sqlite(index_fields_from(data), data, table)
@@ -131,6 +127,10 @@ module EveryPolitician
     private
 
     attr_reader :run_data, :table, :index_fields, :default_index_fields
+
+    def index_fields_from(data)
+      index_fields || (data.first.keys & default_index_fields)
+    end
   end
 
   class Scraper
