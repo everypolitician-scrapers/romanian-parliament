@@ -123,9 +123,9 @@ module EveryPolitician
     end
 
     def error(e)
-      # TODO: do something better with the error
-      warn e
       ScraperWiki.save_sqlite(%i(id), run_data.merge(errored: Time.now), 'runs')
+      # TODO: do something better with the error
+      raise e
     end
 
     private
