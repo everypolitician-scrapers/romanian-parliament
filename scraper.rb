@@ -113,7 +113,7 @@ module EveryPolitician
     end
 
     def index_fields_from(data)
-      index_fields || (data.keys & default_index_fields)
+      index_fields || (data.first.keys & default_index_fields)
     end
 
     def save_all(data, debugging: ENV['MORPH_PRINT_DATA'])
