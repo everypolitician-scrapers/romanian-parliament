@@ -160,7 +160,7 @@ module EveryPolitician
   end
 end
 
-class RomanianParliament < EveryPolitician::Scraper
+class RomanianParliamentScraper < EveryPolitician::Scraper
   def data
     scrape(url => MembersPage).members.map do |mem|
       default_data.merge(mem.to_h).merge(scrape(mem.source => MemberPage).to_h)
@@ -168,7 +168,7 @@ class RomanianParliament < EveryPolitician::Scraper
   end
 end
 
-RomanianParliament.new(
+RomanianParliamentScraper.new(
   url:          'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
   default_data: { term: 2012 }
 ).run
