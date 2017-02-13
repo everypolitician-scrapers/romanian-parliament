@@ -134,8 +134,9 @@ module EveryPolitician
   end
 
   class Scraper
-    def initialize
-      @scraper_run = EveryPolitician::ScraperRun.new
+    def initialize(url:, default_data: {})
+      @url = url
+      @default_data = default_data
     end
 
     def run
@@ -146,36 +147,28 @@ module EveryPolitician
 
     private
 
+    attr_reader :url, :default_data
+
+    def scraper_run
+      @scraper_run = EveryPolitician::ScraperRun.new
+    end
+
     def scrape(h)
       url, klass = h.to_a.first
       klass.new(response: Scraped::Request.new(url: url).response)
     end
+  end
+end
 
-    class IndexToMembers < Scraper
-      def initialize(url:, members_class:, member_class:, default_data: {})
-        @url = url
-        @members_class = members_class
-        @member_class = member_class
-        @default_data = default_data
-        super()
-      end
-
-      def data
-        scrape(url => members_class).members.map do |mem|
-          default_data.merge(mem.to_h).merge(scrape(mem.source => member_class).to_h)
-        end
-      end
-
-      private
-
-      attr_reader :scraper_run, :url, :members_class, :member_class, :default_data
+class RomanianParliament < EveryPolitician::Scraper
+  def data
+    scrape(url => MembersPage).members.map do |mem|
+      default_data.merge(mem.to_h).merge(scrape(mem.source => MemberPage).to_h)
     end
   end
 end
 
-EveryPolitician::Scraper::IndexToMembers.new(
-  url:           'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
-  members_class: MembersPage,
-  member_class:  MemberPage,
-  default_data:  { term: 2012 }
+RomanianParliament.new(
+  url:          'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
+  default_data: { term: 2012 }
 ).run
