@@ -48,10 +48,6 @@ class MemberRow < Scraped::HTML
     area_data.first
   end
 
-  field :term do
-    2012
-  end
-
   field :source do
     tds[1].css('a/@href').text
   end
@@ -105,17 +101,55 @@ class MemberPage < Scraped::HTML
   end
 end
 
-def scrape(h)
-  url, klass = h.to_a.first
-  klass.new(response: Scraped::Request.new(url: url).response)
+module Everypolitician
+  class Scraper
+    def initialize(config: {}, default_data: {}, unique_fields: nil, default_unique_fields: %i(id term start_date))
+      @config = config
+      @default_data = default_data
+      @unique_fields = unique_fields
+      @default_unique_fields = default_unique_fields
+    end
+
+    def to_a
+      data_with_defaults
+    end
+
+    def index_fields
+      unique_fields || (data.first.keys & default_unique_fields)
+    end
+
+    private
+
+    attr_reader :config, :default_data, :unique_fields, :default_unique_fields
+
+    def data_with_defaults
+      @data_with_defaults ||= data.map { |d| default_data.merge(d) }
+    end
+
+    def scrape(h)
+      url, klass = h.to_a.first
+      klass.new(response: Scraped::Request.new(url: url).response)
+    end
+  end
 end
 
-start = 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
-data = scrape(start => MembersPage).members.map do |mem|
-  mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
+class RomanianParliamentScraper < Everypolitician::Scraper
+  def data
+    scrape(config[:url] => MembersPage).members.map do |mem|
+      mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
+    end
+  end
 end
 
-# puts data.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
+scraper = RomanianParliamentScraper.new(
+  config:        {
+    url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
+  },
+  default_data:  { term: 2012 },
+  unique_fields: %i(id term)
+)
+
+# puts scraper.to_a.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-ScraperWiki.save_sqlite(%i(id term), data)
+ScraperWiki.save_sqlite(scraper.index_fields, scraper.to_a)
