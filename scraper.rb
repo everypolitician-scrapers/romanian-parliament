@@ -105,17 +105,24 @@ class MemberPage < Scraped::HTML
   end
 end
 
-def scrape(h)
-  url, klass = h.to_a.first
-  klass.new(response: Scraped::Request.new(url: url).response)
-end
+class RomanianParliamentScraper
+  URL = 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
 
-start = 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
-data = scrape(start => MembersPage).members.map do |mem|
-  mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
+  def data
+    scrape(URL => MembersPage).members.map do |mem|
+      mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
+    end
+  end
+
+  private
+
+  def scrape(h)
+    url, klass = h.to_a.first
+    klass.new(response: Scraped::Request.new(url: url).response)
+  end
 end
 
 # puts data.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-ScraperWiki.save_sqlite(%i(id term), data)
+ScraperWiki.save_sqlite(%i(id term), RomanianParliamentScraper.new.data)
