@@ -142,10 +142,10 @@ class RomanianParliamentScraper < Everypolitician::Scraper
 end
 
 scraper = RomanianParliamentScraper.new(
-  config: {
-    url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
+  config:        {
+    url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
   },
-  default_data: { term: 2012 },
+  default_data:  { term: 2012 },
   unique_fields: %i(id term)
 )
 
