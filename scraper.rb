@@ -109,12 +109,16 @@ module Everypolitician
     end
 
     def to_a
-      data.map { |d| default_data.merge(d) }
+      data_with_defaults
     end
 
     private
 
     attr_reader :config, :default_data
+
+    def data_with_defaults
+      @data_with_defaults ||= data.map { |d| default_data.merge(d) }
+    end
 
     def scrape(h)
       url, klass = h.to_a.first
