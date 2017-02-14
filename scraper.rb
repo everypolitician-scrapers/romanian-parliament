@@ -101,34 +101,44 @@ class MemberPage < Scraped::HTML
   end
 end
 
-class RomanianParliamentScraper
-  def initialize(url:, default_data: {})
-    @url = url
-    @default_data = default_data
-  end
+module Everypolitician
+  class Scraper
+    def initialize(config: {}, default_data: {})
+      @config = config
+      @default_data = default_data
+    end
 
-  def data
-    scrape(url => MembersPage).members.map do |mem|
-      default_data.merge(mem.to_h).merge(scrape(mem.source => MemberPage).to_h)
+    def to_a
+      data.map { |d| default_data.merge(d) }
+    end
+
+    private
+
+    attr_reader :config, :default_data
+
+    def scrape(h)
+      url, klass = h.to_a.first
+      klass.new(response: Scraped::Request.new(url: url).response)
     end
   end
+end
 
-  private
-
-  attr_reader :url, :default_data
-
-  def scrape(h)
-    url, klass = h.to_a.first
-    klass.new(response: Scraped::Request.new(url: url).response)
+class RomanianParliamentScraper < Everypolitician::Scraper
+  def data
+    scrape(config[:url] => MembersPage).members.map do |mem|
+      mem.to_h.merge(scrape(mem.source => MemberPage).to_h)
+    end
   end
 end
 
 # puts data.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
 
 scraper = RomanianParliamentScraper.new(
-  url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2',
+  config: {
+    url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
+  },
   default_data: { term: 2012 }
 )
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-ScraperWiki.save_sqlite(%i(id term), scraper.data)
+ScraperWiki.save_sqlite(%i(id term), scraper.to_a)
