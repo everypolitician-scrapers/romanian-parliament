@@ -103,18 +103,24 @@ end
 
 module Everypolitician
   class Scraper
-    def initialize(config: {}, default_data: {})
+    def initialize(config: {}, default_data: {}, unique_fields: nil, default_unique_fields: %i(id term start_date))
       @config = config
       @default_data = default_data
+      @unique_fields = unique_fields
+      @default_unique_fields = default_unique_fields
     end
 
     def to_a
       data_with_defaults
     end
 
+    def index_fields
+      unique_fields || (data.first.keys & default_unique_fields)
+    end
+
     private
 
-    attr_reader :config, :default_data
+    attr_reader :config, :default_data, :unique_fields, :default_unique_fields
 
     def data_with_defaults
       @data_with_defaults ||= data.map { |d| default_data.merge(d) }
@@ -135,14 +141,15 @@ class RomanianParliamentScraper < Everypolitician::Scraper
   end
 end
 
-# puts data.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
-
 scraper = RomanianParliamentScraper.new(
   config: {
     url: 'http://www.cdep.ro/pls/parlam/structura2015.de?leg=2012&idl=2'
   },
-  default_data: { term: 2012 }
+  default_data: { term: 2012 },
+  unique_fields: %i(id term)
 )
 
+# puts scraper.to_a.map { |r| r.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h }
+
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-ScraperWiki.save_sqlite(%i(id term), scraper.to_a)
+ScraperWiki.save_sqlite(scraper.index_fields, scraper.to_a)
