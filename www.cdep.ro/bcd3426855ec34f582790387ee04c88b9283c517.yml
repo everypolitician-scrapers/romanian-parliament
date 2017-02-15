@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 14 Feb 2017 07:43:37 GMT
+    - Wed, 15 Feb 2017 19:45:50 GMT
     Server:
     - Oracle-Application-Server-11g
     Content-Length:
@@ -29,7 +29,9 @@ response:
     - text/html; charset=ISO-8859-2
     Content-Language:
     - en
+    Set-Cookie:
+    - cookiesession1=0A560934801IQ0RULBTVSTU2J34A29C4;Path=/;HttpOnly
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 14 Feb 2017 07:43:37 GMT
+recorded_at: Wed, 15 Feb 2017 19:45:50 GMT
