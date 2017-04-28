@@ -6,6 +6,8 @@ require 'pry'
 require 'scraped'
 require 'scraperwiki'
 
+require_rel 'lib'
+
 # require 'open-uri/cached'
 # OpenURI::Cache.cache_path = '.cache'
 require 'scraped_page_archive/open-uri'
@@ -76,32 +78,6 @@ class MemberRow < Scraped::HTML
       tds.insert(3, nil) if tds.count == 5 # combined constituency
       tds
     end
-  end
-end
-
-class MemberPage < Scraped::HTML
-  decorator Scraped::Response::Decorator::AbsoluteUrls
-
-  field :name do
-    box.xpath('.//h1/text()').first.text.tidy rescue binding.pry
-  end
-
-  field :image do
-    box.css('.profile-pic-dep img/@src').text
-  end
-
-  field :birth_date do
-    box.css('.profile-pic-dep').text.tidy.to_s.to_date
-  end
-
-  field :email do
-    box.css('span.mailInfo').map(&:text).join(';')
-  end
-
-  private
-
-  def box
-    noko.css('.stiri-detalii')
   end
 end
 
