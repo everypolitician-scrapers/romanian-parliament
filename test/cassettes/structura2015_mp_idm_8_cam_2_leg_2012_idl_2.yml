@@ -1,0 +1,317 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.cdep.ro/pls/parlam/structura2015.mp?cam=2&idl=2&idm=8&leg=2012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 01 May 2017 17:15:51 GMT
+      Server:
+      - Oracle-Application-Server-11g
+      Content-Length:
+      - '23931'
+      Access-Control-Allow-Origin:
+      - https://www.cdep.ro
+      Content-Type:
+      - text/html; charset=ISO-8859-2
+      Content-Language:
+      - en
+      Set-Cookie:
+      - cookiesession1=58CAEE5CY4NRHHJ6UYXA1AFYIUER9C87;Path=/;HttpOnly
+    body:
+      encoding: UTF-8
+      string: "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head> \n  <title>Anastase Roberta
+        Alma</title>\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n
+        \ <meta charset=\"ISO-8859-2\">\n  <meta name=\"viewport\" content=\"width=device-width,
+        minimum-scale=1.0, initial-scale=1\">\n  <link type=\"text/css\" rel=\"stylesheet\"
+        href=\"/site2015/css/style1.css\" media=\"all\">\n  <link type=\"text/css\"
+        rel=\"stylesheet\" href=\"/site2015/css/flexslider.css\" media=\"all\">\n
+        \ <link rel=\"stylesheet\" href=\"/site2015/css/general.css\" type=\"text/css\"
+        />\n  <link rel=\"stylesheet\" href=\"/site2015/css/general_roz.css\" type=\"text/css\"
+        />\n  <link rel=\"stylesheet\" href=\"/site2015/css/home.css\" type=\"text/css\"
+        />\n  <script type=\"text/javascript\" src=\"/site2015/js/jquery-1.11.0.min.js\"></script>\n
+        \ <script type=\"text/javascript\" src=\"/site2015/js/jquery-ui-1.10.4.min.js\"></script>\n
+        \ <script type=\"text/javascript\" src=\"/site2015/js/jquery.cookie.js\"></script>\n
+        \ <script type=\"text/javascript\" src=\"/site2015/js/jquery.flexslider.js\"></script>\n
+        \ <script type=\"text/javascript\" src=\"/site2015/js/scripts.js\"></script>\n<script
+        type=\"text/javascript\" src=\"/highslide/highslide.js\"></script><link rel=\"stylesheet\"
+        type=\"text/css\" href=\"/highslide/highslide.css\" />\n</head>\n<body>\n<script>\n
+        \   function emailCurrentPage(){\n        window.location.href=\"mailto:?subject=\"+document.title+\"&body=\"+escape(window.location.href);\n
+        \   }\n</script>\n\n<div id=\"fb-root\"></div>\n<script>(function(d, s, id)
+        {\n  var js, fjs = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id))
+        return;\n  js = d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=915817101802248\";\n
+        \ fjs.parentNode.insertBefore(js, fjs);\n}(document, 'script', 'facebook-jssdk'));</script>\n
+        \ <div class=\"master-wrapper\">\n    <!-- Header start -->\n    <div id=\"header\">\n
+        \     <!-- Header left start -->\n      <div class=\"header-wrapper\">\n          <div
+        class=\"header-left\">\n            <div class=\"main-logo\">\n              <div
+        class=\"logo-image\">\n                <a href=\"/pls/dic/site2015.home?idl=2\"
+        title=\"Camera Deputatilor\">\n                  <img src=\"/site2015/img/main_logo.png\"
+        alt=\"Sigla Camerei Deputatilor\"/>\n                  <h1>Camera Deputa&#355;ilor</h1>\n
+        \               </a>\n              </div>\n              <div class=\"main-social\">\n
+        \               <ul>\n                  <li id=\"fb-btn\"><a href=\"https://www.facebook.com/pages/Parlamentul-Romaniei-Camera-Deputatilor-Pagina-Oficiala/165253540340098\"
+        title=\"Facebook\"></a></li>\n                  <li id=\"tw-btn\"><a href=\"https://twitter.com/cdep_ro\"
+        title=\"Twitter\"></a></li>\n                  <li id=\"gp-btn\"><a href=\"https://plus.google.com/100451232127794471860/posts\"
+        title=\"Google Plus\"></a></li>\n                  <li id=\"yt-btn\"><a href=\"https://www.youtube.com/user/camdeputatilor\"
+        title=\"YouTube\"></a></li>\n                  <li id=\"insta-btn\"><a href=\"https://instagram.com/cameradeputatilor/\"
+        title=\"Instagram\"></a></li>\n                </ul>\n                <div
+        class=\"fb-like-wrapper\">\n                    <div class=\"fb-like\" data-href=\"https://developers.facebook.com/docs/plugins/\"
+        data-layout=\"button_count\" data-action=\"like\" data-show-faces=\"true\"
+        data-share=\"false\"></div>\n                </div>\n              </div></div>\n
+        \         </div>\n        </div>\n        <!-- Header left end -->\n        <!--
+        Header top start -->\n        <div class=\"header-top clearfix\">\n          <div
+        class=\"header-inner\">\n            <div class=\"header-align clearfix\">
+        \             \n              <div class=\"language\">\n                <span>Language:</span>\n
+        \               <ul><li><a href=\"/pls/parlam/structura2015.mp?idm=8&amp;cam=2&amp;leg=2012&amp;idl=1&amp;pag=1&amp;prn=0&amp;par=\"
+        title=\"RO\">RO</a></li><li class=\"current-language\"><a href=\"#\" title=\"EN\">EN</a></li><li><a
+        href=\"/pls/parlam/structura2015.mp?idm=8&amp;cam=2&amp;leg=2012&amp;idl=3&amp;pag=1&amp;prn=0&amp;par=\"
+        title=\"FR\">FR</a></li>\n                </ul>\n              </div>              \n
+        \           </div>\n          </div>\n        </div>\n        <!-- Header
+        top end -->                \n                <!-- Header center start -->\n
+        \               <div class=\"header-center clearfix\">\n                    <div
+        class=\"header-inner\">\n                        <div class=\"header-align
+        search-dd\">\n                            <!-- Tablet & mobile menu toggle
+        start -->\n                            <div class=\"mobile-menu\">\n                                <button
+        class=\"menu-toggle\"><i class=\"fa fa-bars\"></i>Meniu</button>\n                            </div>\n
+        \                           <!-- Tablet & mobile menu toggle end -->\n<!--
+        Main menu start -->\n<div class=\"main-menu\">\n  <ul>\n    <li class=\"has-dropdown\">\n
+        \     <div class=\"inner-wrap clearfix\">\n<a href=\"#\" title=\"Parliamentary
+        bodies\">Parliamentary bodies</a>\n\n        <div class=\"dropdown\">\n          <ul>\n<li><a
+        href=\"/pls/parlam/structura2015.ch?idl=2\" title=\"The Speaker\">The Speaker</a></li>\n<li><a
+        href=\"/pls/parlam/structura2015.bp?idl=2&amp;poz=1\" title=\"Standing bureau\">Standing
+        bureau</a></li>\n<li><a href=\"/pls/parlam/structura2015.co?idl=2\" title=\"Parliamentary
+        committees\">Parliamentary committees</a></li>\n<li><a href=\"/pls/parlam/structura2015.gp?idl=2\"
+        title=\"Parliamentary goups\">Parliamentary goups</a></li>\n<li class=\"has-sec-dropdown\">\n<a
+        href=\"#\" title=\"Members\">Members</a>\n<div class=\"second-dropdown\" style=\"width:
+        260px;\"><ul>\n<li><a href=\"/pls/parlam/structura2015.de?idl=2\" title=\"by
+        Alphabetical order\">by Alphabetical order</a></li>\n<li><a href=\"/pls/parlam/structura2015.ce?idl=2\"
+        title=\"by Constituencies\">by Constituencies</a></li>\n</ul></div>\n</li>\n<li
+        class=\"has-sec-dropdown\">\n<a href=\"#\" title=\"Joint parliamentary bodies\">Joint
+        parliamentary bodies</a>\n<div class=\"second-dropdown\"><ul>\n<li><a href=\"/pls/parlam/structura2015.co?cam=0&amp;idl=2\"
+        title=\"Parliamentary Committees\">Parliamentary Committees</a></li>\n<li><a
+        href=\"/pls/parlam/structura2015.pr?idl=2\" title=\"Friendship Parliamentary
+        Groups\">Friendship Parliamentary Groups</a></li>\n<li><a href=\"/pls/parlam/structura2015.dp?idl=2\"
+        title=\"Parliamentary delegations\">Parliamentary delegations</a></li>\n</ul></div>\n</li>\n<li
+        class=\"has-sec-dropdown\">\n<a href=\"#\" title=\"Other legislatures\">Other
+        legislatures</a>\n<div class=\"second-dropdown\"><ul>\n<li><a href=\"/pls/parlam/structura2015.home?leg=2012&amp;idl=2\"
+        title=\"2012 - 2016\">2012 - 2016</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=2008&amp;idl=2\"
+        title=\"2008 - 2012\">2008 - 2012</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=2004&amp;idl=2\"
+        title=\"2004 - 2008\">2004 - 2008</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=2000&amp;idl=2\"
+        title=\"2000 - 2004\">2000 - 2004</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=1996&amp;idl=2\"
+        title=\"1996 - 2000\">1996 - 2000</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=1992&amp;idl=2\"
+        title=\"1992 - 1996\">1992 - 1996</a></li>\n<li><a href=\"/pls/parlam/structura2015.home?leg=1990&amp;idl=2\"
+        title=\"1990 - 1992\">1990 - 1992</a></li>\n</ul></div>\n</li>\n          \n
+        \         </ul>\n        </div>\n      </div>\n    </li>\n<li class=\"menu-sep\"><span></span></li>\n<li
+        class=\"has-dropdown\">\n      <div class=\"inner-wrap clearfix\">\n<a href=\"#\"
+        title=\"Parliamentary business\">Parliamentary business</a>\n\n        <div
+        class=\"dropdown\">\n          <ul>\n<li><a href=\"/pls/proiecte/upl_pck2015.home\"
+        title=\"Bill tracking\">Bill tracking</a></li>\n<li class=\"has-sec-dropdown\">\n<a
+        href=\"#\" title=\"Parliamentary control\">Parliamentary control</a>\n<div
+        class=\"second-dropdown\" style=\"width: 300px;\"><ul>\n<li><a href=\"/pls/parlam/interpelari2015.home\"
+        title=\"Questions & Interpellations\">Questions & Interpellations</a></li>\n<li><a
+        href=\"/pls/parlam/motiuni2015.home\" title=\"Motions\">Motions</a></li>\n<li><a
+        href=\"/eu/examinare_pck2015.lista_examinare\" title=\"EU subsidiarity check\">EU
+        subsidiarity check</a>\n<li><a href=\"/pls/dic/site2015.page?id=329\" title=\"Authorities
+        under parliamentary control\">Authorities under parliamentary control</a></li>\n</ul></div>\n</li>\n<li
+        class=\"has-sec-dropdown\">\n<a href=\"#\" title=\"Plenary activities\">Plenary
+        activities</a>\n<div class=\"second-dropdown\" style=\"width: 200px;\"><ul>\n<li><a
+        href=\"/pls/caseta/eCaseta2015.OrdineZi\" title=\"Agenda of the meetings\">Agenda
+        of the meetings</a></li>\n<li><a href=\"/pls/steno/steno2015.home\" title=\"Minutes
+        of the debates\">Minutes of the debates</a></li>\n<li><a href=\"/pls/steno/steno2015.video?sursa=1\"
+        title=\"Video & audio\">Video & audio</a></li>\n<li><a href=\"/pls/steno/evot2015.data\"
+        title=\"Electronic voting\">Electronic voting</a></li>\n</ul></div>\n</li>\n<li
+        class=\"has-sec-dropdown\">\n<a href=\"#\" title=\"Committees activities\">Committees
+        activities</a>\n<div class=\"second-dropdown\" style=\"width: 200px;\"><ul>\n<li><a
+        href=\"/co/sedinte2015.comisii\" title=\"Meetings\">Meetings</a></li>\n<li><a
+        href=\"/pls/proiecte/upl_com2015.home\" title=\"Documents\">Documents</a></li>\n<li><a
+        href=\"/co/sedinte2015.comisii?care=1\" title=\"Video & audio\">Video & audio</a></li>\n</ul></div>\n</li>\n
+        \         \n          </ul>\n        </div>\n      </div>\n    </li>\n<li
+        class=\"menu-sep\"><span></span></li>\n\n    <li class=\"has-dropdown\">\n
+        \     <div class=\"inner-wrap clearfix\">\n<a href=\"#\" title=\"Public information\">Public
+        information</a>\n<div class=\"dropdown\"><ul><li class=\"has-sec-dropdown\">\n<a
+        href=\"#\" title=\"General Secretariat\">General Secretariat</a>\n<div class=\"second-dropdown\"
+        style=\"width: 200px;\"><ul>\n<li><a href=\"/pls/dic/site2015.page?den=servicii2\"
+        title=\"Attributions\">Attributions</a></li>\n<li><a href=\"/pls/dic/site2015.page?den=servicii2-schema\"
+        title=\"Organizational structure\">Organizational structure</a></li>\n<li><a
+        href=\"/pls/dic/servicii2015.conducere?idl=2\" title=\"Leadership\">Leadership</a></li>\n</ul></div></li>\n<li><a
+        href=\"/relatii_publice/site2015.home?idl=2\" title=\"Public relations\">Public
+        relations</a></li>\n<li><a href=\"/relatii_publice/site2015.dpetitii?idl=2\"
+        title=\"Petitions and hearings\">Petitions and hearings</a></li>\n<li><a href=\"/informatii_publice/achizitii2015.home\"
+        title=\"Public procurement\">Public procurement</a></li>\n<li><a href=\"/pls/dic/declaratii2015.home?idl=2\"
+        title=\"Declarations of interest\">Declarations of interest</a></li>\n<li><a
+        href=\"/pls/parlam/informatii_economice2015.home\" title=\"Income and expenses\">Income
+        and expenses</a></li>\n<li><a href=\"/pls/personal/resurse_umane2015.concursuri?par=1\"
+        title=\"Recruitment\">Recruitment</a></li>\n<li><a href=\"/pls/dic/site2015.page?id=477\"
+        title=\"Logo\">Logo</a>\n          \n          </ul>\n        </div>\n      </div>\n
+        \   </li>\n\n  </ul>\n</div>\n<!-- Main menu end -->\n\n                            <!--
+        Header search -->\n                            <!--<button class=\"search-btn\"></button>-->\n
+        \                           <!-- Tablet & mobile expandable search start -->\n
+        \                           <div class=\"mobile-search\">\n                                <div
+        class=\"sb-search\" id=\"sb-search\">\n                                    <form>\n
+        \                                       <input class=\"sb-search-input\" placeholder=\"Cauta..\"
+        type=\"text\" value=\"\" name=\"cauta\" id=\"search\">\n                                        <input
+        class=\"sb-search-submit\" type=\"submit\" value=\"\">\n                                        <span
+        class=\"sb-icon-search\"><i class=\"fa fa-search\"></i></span>\n                                    </form>\n
+        \                               </div>\n                            </div>\n
+        \                           <!-- Tablet & mobile expandable search end -->\n
+        \                           <!-- Desktop search start -->\n                            <div
+        class=\"header-search\">\n                                <form method=\"POST\">\n
+        \                                   <input type=\"text\" name=\"cauta\" placeholder=\"Cauta..\"/>\n
+        \                               </form>\n                            </div>\n
+        \                           <!-- Desktop search end -->\n                            \n
+        \                       </div>\n                    </div>\n                </div>\n
+        \               <!-- Header center end -->\n                \n                <!--
+        Header bottom start -->\n                <div class=\"header-bottom clearfix\">\n
+        \                 <div class=\"header-inner\">\n                    <div class=\"header-align\">\n
+        \                     <div class=\"sub-menu\">\n                        <ul>\n<li><a
+        href=\"/pls/dic/site2015.page?id=794\" title=\"Legal notice\">Legal notice</a></li>\n<li
+        class=\"s-menu-sep\"><span></span></li>\n<li><a href=\"/pls/dic/site2015.page?den=istorie2\"
+        title=\"Historic\">Historic</a></li>\n<li class=\"s-menu-sep\"><span></span></li>\n<li><a
+        href=\"/pls/dic/htp_contact1?idl=2\" title=\"Contact\">Contact</a></li>\n
+        \                             \n                        </ul>\n                      </div>\n
+        \                   </div>\n                  </div>\n                </div>\n
+        \               <!-- Header bottom end -->\n \n<!-- Main content start -->\n<div
+        id=\"content\">\n  <!-- Main content wrapper start -->\n  <div class=\"content-wrapper
+        clearfix\">\n<!-- Left content start --><div class=\"content-left\">\n<div
+        class=\"resurse-parlamentare-box\"><div class=\"box-title\" style=\"padding-top:
+        16px;\"><h3>Roberta Alma ANASTASE</h3></div><div class=\"resurse-list\" style=\"padding-top:
+        5px; padding-bottom: 5px\"><ul><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=0\">Curriculum
+        Vitae</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=1\">Parliamentary
+        activity</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=12\">Press
+        releases</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=2\">Legislative
+        initiatives</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=3\">Questions
+        & Interpellations</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=11\">Motions</a></li><li><a
+        href=\"/pls/steno/steno2015.lista?idv=4687&leg=2012&idl=2\">Speaches</a></li><li><a
+        href=\"/pls/steno/evot2015.mp?idm=8&cam=2&leg=2012&pag=1&idl=2\">Voting records</a></li><li><a
+        href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=5\">Wealth
+        declaration</a></li><li><a href=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=6\">Interest
+        declaration</a></li></ul></div></div><div class=\"resurse-parlamentare-box\"><div
+        class=\"box-title\" style=\"padding-top: 16px;\"><h3>Alte legislaturi</h3></div><div
+        class=\"resurse-list\" style=\"padding-top: 5px; padding-bottom: 5px\"><ul><li><a
+        href=\"/pls/parlam/structura2015.mp?idm=6&leg=2016&cam=2&idl=2\">Deputy -
+        2016-present</a><li><b>Deputy - 2012-2016</b></a><li><a href=\"/pls/parlam/structura2015.mp?idm=7&leg=2008&cam=2&idl=2\">Deputy
+        - 2008-2012</a><li><a href=\"/pls/parlam/structura2015.mp?idm=273&leg=2004&cam=2&idl=2\">Deputy
+        - 2004-2008</a></ul></div></div>\n</div><!-- Left content end -->\n<!-- Right
+        content start --><div class=\"content-right\">\n<div class=\"stiri-box\">\n<div
+        class=\"cale clearfix\"><table width=\"100%\" border=0><tr valign=\"top\">\n<td
+        class=\"cale-left\" nowrap>You are here:: </td>\n<td class=\"cale-right\"
+        width=\"100%\"><A HREF=\"/pls/dic/site2015.home?idl=2\">Prima pagina</A> &gt;
+        <A HREF=\"/pls/parlam/structura2015.home?leg=2012&cam=2&idl=2\">Legislature
+        2012-2016 / Chamber of Deputies</A> &gt; Roberta Alma Anastase</td>\n</tr></table></div>\n<div
+        class=\"box-title clearfix\">\n<div style=\"float: left;\"><h3>Chamber of
+        Deputies</h3></div>\n<div style=\"float: right;\"><h3>Legislature 2012-2016</h3></div>\n</div>\n<div
+        class=\"stiri-detalii clearfix\">\n<div id=\"olddiv\">\n\n<div class=\"boxStiri\"><div
+        class=\"profile-dep clearfix\"><div class=\"profile-pic-dep\" style=\"text-align:
+        center;\">\n<a href=\"/parlamentari/l2012/mari/Anastase_Roberta.jpg\" class=\"highslide\"
+        onclick=\"return hs.expand(this)\"><img src=\"/parlamentari/l2012/Anastase_Roberta.jpg\"
+        border=0 width=\"150\" alt=\"Roberta Alma Anastase\"></a>\n<br>b.  27 mar.
+        1976\n</div><div class=\"boxTitle\"><h1 style=\"line-height: 110%;\">Roberta
+        Alma ANASTASE</h1>\n<div class=\"page-actions\">\n</div>\n</div>\n<h3>Parliamentary
+        activity in legislature 2012-2016</h3>\n</div>\n<div class=\"boxDep clearfix\"
+        style=\"margin-top: 10px;\"><h3>DEPUTY</h3>\n<p>Constituency no.31 <A HREF=\"/pls/parlam/structura2015.ce?cir=30&leg=2012&idl=2\">PRAHOVA</A>,
+        uninominal college no.11</p>\n</div>\n<div class=\"boxDep clearfix\" style=\"margin-top:
+        10px;\"><h3>Political party:</h3>\n<p><table border=0><tr valign=\"center\"><td
+        align=\"right\"><img src=\"/aleg/pdl2012.gif\" border=1></td><td><table border=0><tr
+        valign=\"top\"><td><A HREF=\"/pls/parlam/structura2015.fp?idp=67&cam=2&leg=2012&idl=2\">PDL</A></td><td>-</td><td>Democratic
+        Liberal Party</td><td>&nbsp;- until  feb. 2015</td></tr></table></td></tr><tr
+        valign=\"center\"><td align=\"right\"><img src=\"/aleg/pnl2008.gif\" border=1></td><td><table
+        border=0><tr valign=\"top\"><td><A HREF=\"/pls/parlam/structura2015.fp?idp=27&cam=2&leg=2012&idl=2\">PNL</A></td><td>-</td><td>National
+        Liberal Party</td><td>&nbsp;- since  feb. 2015</td></tr></table></td></tr></table></p>\n</div>\n<div
+        class=\"boxDep clearfix\" style=\"margin-top: 10px;\"><h3>Parliamentary group:</h3>\n<p><table
+        border=0 width=\"100%\">\n<tr valign=\"top\"><td ><A HREF=\"/pls/parlam/structura2015.gp?idg=3&leg=2012&idl=2\">The
+        parliamentary group of the Democrat Liberal Party</A></td><td nowrap>&nbsp;-
+        member until  feb. 2015</td>\n</tr>\n<tr valign=\"top\"><td ><b><A HREF=\"/pls/parlam/structura2015.gp?idg=2&leg=2012&idl=2\">The
+        parliamentary group of the National Liberal Party</A></b></td><td nowrap>&nbsp;-
+        <b>member since  feb. 2015</b></td>\n</tr></table></p>\n</div>\n<div class=\"boxDep
+        clearfix\" style=\"margin-top: 10px;\"><h3>Standing committees</h3>\n<p><A
+        HREF=\"/pls/parlam/structura2015.co?idc=13&cam=2&leg=2012&idl=2\">Committee
+        for Foreign Policy</A> (since  jun. 2014)<br><A HREF=\"/pls/parlam/structura2015.co?idc=33&cam=2&leg=2012&idl=2\">The
+        Committee on European Affairs</A> (since  sep. 2015) - Vice-Chairperson (since
+        \ oct. 2015)<br><A HREF=\"/pls/parlam/structura2015.co?idc=33&cam=2&leg=2012&idl=2\">The
+        Committee on European Affairs</A> (until  mar. 2015) - Vice-Chairperson (since
+        \ apr. 2014)<br><A HREF=\"/pls/parlam/structura2015.co?idc=7&cam=2&leg=2012&idl=2\">Committee
+        for Labour and Social Protection</A> (until  jun. 2014)</p>\n</div>\n<div
+        class=\"boxDep clearfix\" style=\"margin-top: 10px;\"><h3>Parliamentary delegations:</h3>\n<p><table
+        border=0 style=\"border-spacing: 3px; border-collapse: separate;\"><tr valign=\"top\"><td><A
+        HREF=\"/pls/parlam/structura2015.dp?idg=32&leg=2012&idl=2\">Delegation to
+        the NATO Parliamentary Assembly</A></td><td>&nbsp;- until  apr. 2015</td><td><img
+        src=\"/img/spacer.gif\" border=0 width=50 height=1></td><td>&nbsp;member</td></tr><tr
+        valign=\"top\"><td>&nbsp;</td><td>&nbsp;- since  dec. 2015</td><td><img src=\"/img/spacer.gif\"
+        border=0 width=50 height=1></td><td>&nbsp;member</td></tr></table></p>\n</div>\n<div
+        class=\"boxDep clearfix\" style=\"margin-top: 10px;\"><h3>Parliamentary friendship
+        groups:</h3>\n<p><table style=\"border-spacing: 3px; border-collapse: separate;\"><tr
+        valign=\"top\"><td><img src=\"/camera_deputatilor/grupuri_prietenie/flags1/germania.gif\"
+        STYLE=\"border: 1px solid blue;\" ></td><td><A HREF=\"/pls/parlam/structura2015.pr?idg=52&leg=2012&idl=2\">Friendship
+        parliamentary group with Federal Republic of Germany</A></td><td>- since  feb.
+        2013</td></tr></table></p>\n</div>\n<div class=\"boxDep clearfix\" style=\"margin-top:
+        10px;\"><h3>Parliamentary activity in figures:</h3>\n<p><table border=0 style=\"border-spacing:
+        3px; border-collapse: separate;\"><tr valign=\"top\"><td align=\"right\">Speaches:</td><td><A
+        HREF=\"/pls/steno/steno2015.lista?idv=4687&leg=2012&idl=2\"><b>19</b></A>
+        (in 14 plenary sittings)</td></tr><tr valign=\"top\"><td align=\"right\">Political
+        declarations:<td><A HREF=\"/pls/steno/steno2015.lista?idv=4687&leg=2012&topic1=1\"><b>5</b></A></td></tr><tr
+        valign=\"top\"><td align=\"right\">Legislative initiatives: </td><td><A HREF=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=2&prn=0&par=\"><b>61</b></A></td><tr><tr
+        valign=\"top\"><td align=\"right\">Questions & Interpellations: </td><td><A
+        HREF=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=3&prn=0&par=\"><b>21</b></A></td><tr><tr
+        valign=\"top\"><td align=\"right\">Motions: </td><td><A HREF=\"/pls/parlam/structura2015.mp?idm=8&cam=2&leg=2012&idl=2&pag=11&prn=0&par=\"><b>22</b></A></td><tr></table></p>\n</div>\n</ul>\n</div>\n</div>\n</div>\n</div>\n</div><!--
+        Right content end -->\n\n  </div>\n  <!-- Main content wrapper end -->\n</div>\n<!--
+        Main content end -->\n\n<!-- Footer start -->\n<div id=\"footer\">\n\n  <!--
+        Footer top start -->\n  <div class=\"footer-top\">\n    <div class=\"footer-inner\">\n
+        \     \n      <!-- Footer logo start -->\n      <div class=\"footer-logo\">\n
+        \       <a href=\"/\" title=\"Chamber of Deputies\">\n          <img src=\"/site2015/img/cdep_footer_logo.png\"
+        alt=\"Chamber of Deputies\"/>\n          <h3>Chamber of Deputies</h3>\n        </a>\n
+        \     </div>\n      <!-- Footer logo end -->\n          \n      <!-- Footer
+        content start -->\n      <div class=\"footer-content clearfix\">\n          \n
+        \       <div class=\"footer-adresa\">\n          <h4>Postal address</h4>\n
+        \         <p>Palatul Parlamentului, str.Izvor nr.2-4, sect.5, Bucharest, Romania</p>\n
+        \         <div class=\"footer-tel\">\n            <span>+40213160300</span>\n
+        \           <span>+40214141111</span>\n          </div>\n          <a class=\"footer-mail\"
+        href=\"mailto:webmaster@cdep.ro\">webmaster@cdep.ro</a>\n        </div>\n
+        \       <div class=\"footer-linkuri\">\n          <h4>Links</h4>\n          <ul>\n
+        \           <li><a href=\"http://www.presidency.ro/\" title=\"President of
+        Romania\" target=\"extern\">President of Romania</a></li>\n            <li><a
+        href=\"http://www.senat.ro\" title=\"Senate\" target=\"extern\">Senate</a></li>\n
+        \           <li><a href=\"http://www.guv.ro\" title=\"Government of Romania\"
+        target=\"extern\">Government of Romania</a></li>\n            <li><a href=\"http://www.ccr.ro\"
+        title=\"Constitutional Court\" target=\"extern\">Constitutional Court</a></li>\n
+        \           <li><a href=\"http://www.clr.ro\" title=\"Legislative Council\"
+        target=\"extern\">Legislative Council</a></li>\n            <li><a href=\"http://www.monitoruloficial.ro/\"
+        title=\"Monitorul Oficial - Official Gazette\" target=\"extern\">Monitorul
+        Oficial - Official Gazette</a></li>\n          </ul>\n        </div>\n\n        <div
+        class=\"footer-social\">\n          <h4>Camera Deputatilor</h4>\n          <div
+        class=\"fb-like-wrapper\">\n            <div class=\"fb-like\" data-href=\"structura2015.mp?idm=8&cam=2&leg=2012&idl=2\"
+        data-layout=\"button_count\" data-action=\"like\" data-show-faces=\"true\"
+        data-share=\"true\"></div>\n          </div>\n        </div>\n<div style=\"float:
+        right; margin-top: 30px; font-size: 10px; color: #999999; font-family: Verdana,
+        Arial, Helvetica, sans-serif;\">\n<a href=\"https://www.cdep.ro/pls/dic/site2015.home\"><img
+        src=\"/site2015/img/decrypted.png\" alt=\"HTTPS access\" /></a>\n</div>\n
+        \                 \n      </div>\n      <!-- Footer content end -->\n\n    </div>\n
+        \   \n  </div>\n  <!-- Footer top end -->\n  \n  <!-- Footer bottom start
+        -->\n  <div class=\"footer-bottom\">\n    <div class=\"footer-inner clearfix\">\n
+        \     <!-- Footer menu start -->\n      <div class=\"footer-menu\">\n        <ul>\n
+        \         <li class=\"first\"><a href=\"/pls/dic/site2015.map?idl=2\" title=\"Sitemap\">Sitemap</a></li>\n
+        \         <li><a href=\"/pls/parlam/structura2015.home?idl=2\" title=\"Parliamentary
+        bodies\">Parliamentary bodies</a></li>\n          <li><a href=\"/pls/dic/site2015.page?den=legislativ2\"
+        title=\"Parliamentary business\">Parliamentary business</a></li>\n          <li><a
+        href=\"/relatii_publice/site2015.home\" title=\"Public information\">Public
+        information</a></li>\n          <li><a href=\"/pls/dic/arhiva_anunturi?idl=2\"
+        title=\"Archive\">Archive</a></li>\n          \n        </ul>\n      </div>\n
+        \     <!-- Footer menu end -->\n      <div class=\"copyright\">\n        <p>Copyright
+        &copy; Chamber of Deputies</p>\n      </div>\n    </div>\n  </div>\n  <!--
+        Footer bottom end -->\n  \n</div>\n<!-- Footer end -->\n\n    </div>\n\n    </div>\n\n
+        \ </body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 01 May 2017 17:15:52 GMT
+recorded_with: VCR 3.0.3
