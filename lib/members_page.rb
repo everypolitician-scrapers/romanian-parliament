@@ -32,7 +32,7 @@ class MemberRow < Scraped::HTML
   end
 
   field :term do
-    2012
+    url[/leg=(\d+)/, 1]
   end
 
   field :source do
