@@ -375,7 +375,7 @@
   <!-- Footer top end -->
   
   <!-- Footer bottom start -->
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="padding-bottom: 100px;">
     <div class="footer-inner clearfix">
       <!-- Footer menu start -->
       <div class="footer-menu">
@@ -404,4 +404,31 @@
     </div>
 
   </body>
+  </body>
 </html>
+
+<link rel="stylesheet" type="text/css" href="/js/cookies/cookieconsent.min.css" />
+<script src="/js/cookies/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#551043",
+      "text": "#ffdddd"
+    },
+    "button": {
+      "background": "#370a2b"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom",
+  "content": {
+    "message": "This site uses functional cookies to assist the user in completing forms. By continuing to navigate, you agree to using them.",
+    "dismiss": "I agree",
+    "link": "More details on the processing of personal data on the website of the Chamber of Deputies",
+    "href": "/pls/dic/site2015.page?den=rgpd-site1"
+  }
+})});
+</script>
+
