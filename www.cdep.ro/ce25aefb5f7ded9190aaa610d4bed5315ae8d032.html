@@ -421,6 +421,54 @@ window.cookieconsent.initialise({
     }
   },
   "theme": "classic",
+  "type": "opt-out1",
+  onInitialise: function (status) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    // enable cookies
+    alert('1');
+  }
+  if (type == 'opt-out' && !didConsent) {
+    // disable cookies
+    var anchors = document.getElementsByTagName("a");
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = function() {return false;};
+    }
+    document.cookie = 'cookieconsent_status' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    alert('2');
+  }
+},
+ 
+onStatusChange: function(status, chosenBefore) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    // enable cookies
+    alert('3');
+  }
+  if (type == 'opt-out' && !didConsent) {
+    // disable cookies
+    var anchors = document.getElementsByTagName("a");
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = function() {return false;};
+    }
+    document.cookie = 'cookieconsent_status' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    alert('4');
+  }
+},
+ 
+onRevokeChoice: function() {
+  var type = this.options.type;
+  if (type == 'opt-in') {
+    // disable cookies
+    alert('5');
+  }
+  if (type == 'opt-out') {
+    // enable cookies
+    alert('6');
+  }
+},
   "position": "bottom",
   "content": {
     "message": "This site uses functional cookies to assist the user in completing forms. By continuing to navigate, you agree to using them.",
@@ -429,5 +477,6 @@ window.cookieconsent.initialise({
     "href": "/pls/dic/site2015.page?den=rgpd-site1"
   }
 })});
+
 </script>
 
