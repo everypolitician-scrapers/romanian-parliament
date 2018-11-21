@@ -18,11 +18,11 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 20 Nov 2018 13:29:59 GMT
+    - Wed, 21 Nov 2018 11:57:11 GMT
     Server:
     - Oracle-HTTP-Server-12c
     Content-Length:
-    - '25340'
+    - '25349'
     Access-Control-Allow-Origin:
     - https://www.cdep.ro
     Content-Type:
@@ -30,8 +30,8 @@ response:
     Content-Language:
     - en
     Set-Cookie:
-    - cookiesession1=5A602950DLT3R5DLBF3TFPML9UV75E26;Path=/;HttpOnly
+    - cookiesession1=5A602950C6BPLQFBDESAA3YMA20Q354E;Path=/;HttpOnly
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 20 Nov 2018 13:30:00 GMT
+recorded_at: Wed, 21 Nov 2018 11:57:12 GMT
