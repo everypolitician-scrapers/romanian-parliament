@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Sat, 13 Apr 2019 19:48:23 GMT
+    - Sun, 14 Apr 2019 15:21:30 GMT
     Server:
     - Oracle-HTTP-Server-12c
     Content-Length:
@@ -30,8 +30,8 @@ response:
     Content-Language:
     - en
     Set-Cookie:
-    - cookiesession1=5AA5BF99OHBJPP1SNN8TD0D4CZFNFFA4;Path=/;HttpOnly
+    - cookiesession1=5AA5BF99U1NGVG7HRZZLRYR8ILIKB30F;Path=/;HttpOnly
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Sat, 13 Apr 2019 19:48:24 GMT
+recorded_at: Sun, 14 Apr 2019 15:21:30 GMT
