@@ -18,11 +18,11 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 25 Jun 2019 05:26:45 GMT
+    - Wed, 26 Jun 2019 10:10:28 GMT
     Server:
     - Oracle-HTTP-Server-12c
     Content-Length:
-    - '25835'
+    - '25806'
     Access-Control-Allow-Origin:
     - https://www.cdep.ro
     Content-Type:
@@ -32,4 +32,4 @@ response:
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Tue, 25 Jun 2019 05:26:45 GMT
+recorded_at: Wed, 26 Jun 2019 10:10:29 GMT
